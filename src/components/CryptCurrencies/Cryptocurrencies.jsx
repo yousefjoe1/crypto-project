@@ -20,10 +20,10 @@ const Cryptocurrencies = ({ topTen }) => {
     setCrpts(filterdCryptos);
   }, [searchcrypto]);
 
-  if (isFetching) return "Looding .....";
+  if (isFetching) return <div className="h-100">Loading</div>;
 
   return (
-    <>
+    <div>
       {!topTen && (
         <div className="search-crypto">
           <Input
@@ -32,7 +32,7 @@ const Cryptocurrencies = ({ topTen }) => {
           />
         </div>
       )}
-      <Row gutter={[32, 32]} className="crypto-card-container">
+      <Row gutter={[32, 32]} className="crypto-card-container h-100">
         {crpts?.map((crypto) => (
           <Col xs={24} sm={12} lg={6} className="crypto-card" key={crypto.uuid}>
             <Link to={`/crypto/${crypto.uuid}`}>
@@ -49,7 +49,7 @@ const Cryptocurrencies = ({ topTen }) => {
           </Col>
         ))}
       </Row>
-    </>
+    </div>
   );
 };
 

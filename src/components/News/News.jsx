@@ -14,7 +14,7 @@ const News = ({ topTen }) => {
     count: topTen ? 6 : 12,
   });
 
-  if (!cryptoNews?.value) return "Loading";
+  if (!cryptoNews?.value) return <h1 className="bg-dark p-4">Loading</h1>;
 
   return (
     <Row gutter={[24, 24]}>

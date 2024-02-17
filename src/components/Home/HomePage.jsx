@@ -15,7 +15,7 @@ const HomePage = () => {
 
   const theStats = data?.data?.stats;
 
-  if (isFetching) return "Looding .....";
+  if (isFetching) return <h3 className="bg-dark text-white p-4">Loading</h3>;
 
   return (
     <>
@@ -61,15 +61,6 @@ const HomePage = () => {
         </Title>
       </div>
       <Cryptocurrencies topTen={true} />
-      <div className="home-heading-container">
-        <Title level={2} className="home-title">
-          Latest Crypto News
-        </Title>
-        <Title level={3} className="show-more">
-          <Link to={"/news"}>show more</Link>
-        </Title>
-      </div>
-      <News topTen={true} />
     </>
   );
 };
